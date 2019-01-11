@@ -28,6 +28,7 @@
                                 </div>
                                 <!-- <router-link to="/"> -->
                                 <a
+                                    href="#"
                                     :class="isTop? 'text-dark':''"
                                     class="p-2 nav-link align-self-center text-light font-weight-bold my-style-animation"
                                 >Home</a>
