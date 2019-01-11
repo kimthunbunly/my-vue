@@ -4,63 +4,7 @@
         <!-- <Carousel/> -->
         <div class="my-bg">
             <div class="my-bg-transparent-dark">
-                <nav
-                    class="navbar navbar-expand-lg d-none d-lg-block my-transition"
-                    style="z-index:999"
-                    :class="isTop? 'white':'bg-transparent'"
-                >
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="container">
-                            <div class="d-flex bd-highlight">
-                                <div class="p-2 flex-grow-1 bd-highlight align-self-center">
-                                    <img
-                                        src="../assets/everoad-logo.png"
-                                        class="img-fluid w-25"
-                                        :class="isTop? 'd-none':''"
-                                        alt="logo"
-                                    >
-                                    <img
-                                        src="../assets/everoad-logo-white.png"
-                                        class="img-fluid w-25 d-none"
-                                        :class="isTop? 'd-block  ':''"
-                                        alt="logo"
-                                    >
-                                </div>
-                                <!-- <router-link to="/"> -->
-                                <a
-                                    href="#"
-                                    :class="isTop? 'text-dark':''"
-                                    class="p-2 nav-link align-self-center text-light font-weight-bold my-style-animation"
-                                >Home</a>
-                                <!-- </router-link> -->
-                                <a
-                                    :class="isTop? 'text-dark':''"
-                                    href="#"
-                                    class="p-2 nav-link align-self-center text-light font-weight-bold my-style-animation"
-                                >Shippers</a>
-                                <a
-                                    :class="isTop? 'text-dark':''"
-                                    href="/"
-                                    class="p-2 nav-link align-self-center text-light font-weight-bold my-style-animation"
-                                >Carriers</a>
-                                <div class="p-2 bd-highlight align-self-center nav-item">
-                                    <router-link to="/login">
-                                        <button
-                                            class="btn font-weight-bold btn-outline-dark rounded-0"
-                                        >Login</button>
-                                    </router-link>
-                                </div>
-                                <div class="p-2 bd-highlight align-self-center">
-                                    <router-link to="/signup">
-                                        <button
-                                            class="btn font-weight-bold btn-primary rounded-0"
-                                        >Signup</button>
-                                    </router-link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+                    <NavbarScroll/>
                 <div class="d-flex flex-column bd-highlight mb-3 text-center">
                     <div :class="isTop? 'my-top':''">
                         <br>
@@ -150,38 +94,14 @@
 import Navbar from "../layout/Navbar.vue";
 // import Carousel from "../components/carousel/HomeCarousel.vue";
 import Footer from "../layout/Footer.vue";
+import NavbarScroll from "../layout/navbarscroll/NavbarScroll.vue"
 export default {
   components: {
     Navbar,
     // Carousel,
-    Footer
-  },
-  data(){
-    return{
-      bgChangeColor:"",
-      isTop: false
-    }
-  },
-  methods:{
-    handleScroll (){
-      const x = window.scrollY
-      if (x > 55) {
-         this.bgChangeColor = "white"
-         this.isTop= true
-      } else {
-        this.bgChangeColor = ""
-        this.isTop= false
-      }
-      console.log(window.scrollY);
-      
-    }
-  },
-  created () {
-  window.addEventListener('scroll', this.handleScroll );
-  },
-destroyed () {
-  window.removeEventListener('scroll', this.handleScroll);
-}
+    Footer,
+    NavbarScroll
+  }
 };
 </script>
 
@@ -191,21 +111,7 @@ destroyed () {
     height: 100vh;
     background-size: cover;
 }
-.my-bg-transparent-dark {
-    background: rgba(46, 59, 76, 0.6);
-    height: 100vh;
-    background-size: cover;
-}
-.white {
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: background-color 0.8s ease;
-}
-.my-transition {
-    transition: background-color 0.8s ease;
-}
+
 .title-content {
     color: #fff;
     font-weight: bold;
