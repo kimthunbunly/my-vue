@@ -4,7 +4,7 @@
         <!-- <Carousel/> -->
         <div class="my-bg">
             <div class="my-bg-transparent-dark">
-                    <NavbarScroll/>
+                <NavbarScroll/>
                 <div class="d-flex flex-column bd-highlight mb-3 text-center">
                     <div :class="isTop? 'my-top':''">
                         <br>
@@ -19,25 +19,29 @@
                 </div>
                 <div class="row text-center mx-0">
                     <div class="col-lg-6 py-2">
-                        <button
-                            class="btn font-weight-bold btn-primary p-2 rounded-0 w-50"
-                        >Ship with Everoad</button>
+                        <router-link to="/shipper">
+                            <button
+                                class="btn font-weight-bold btn-primary p-2 rounded-0 w-50"
+                            >Ship with Everoad</button>
+                        </router-link>
                     </div>
                     <div class="col-lg-6 py-2">
-                        <button
-                            class="btn font-weight-bold btn-primary p-2 rounded-0 w-50"
-                        >Hual with Everoad</button>
+                        <router-link to="/carrier">
+                            <button
+                                class="btn font-weight-bold btn-primary p-2 rounded-0 w-50"
+                            >Hual with Everoad</button>
+                        </router-link>
                     </div>
                 </div>
             </div>
         </div>
         <div class="card card-body text-center">
-            <h3 class="card-title p-4">
+            <h2 class="card-title p-4 font-weight-bold">
                 Innovative digital solution matching Shippers with
                 <span
                     class="text-warning"
                 >Carriers</span>
-            </h3>
+            </h2>
             <img class="img-fluid p-4" src="../assets/content.svg" alt="bg-content">
         </div>
         <div class="bg-light">
@@ -54,9 +58,11 @@
                                 </h2>
                                 <p>Everoad's digital solution enables every kind of shipper - from large multinational companies to local SMB's - to find the best carrier for all their shipment needs accross Europe - from FTL to a few pallets - at the best price - for spot and regular.</p>
                                 <div class="text-center">
-                                    <button
-                                        class="btn font-weight-bold btn-primary rounded-0 w-50"
-                                    >Ship with Everoad</button>
+                                    <router-link to="/signup">
+                                        <button
+                                            class="btn font-weight-bold btn-primary rounded-0 w-50"
+                                        >Ship with Everoad</button>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -76,9 +82,11 @@
                                 </h2>
                                 <p>Everoad's tech-powered solution allows carriers to reduce empty kilometers, find the freight they want across Europe, in spot and regular on the routes they operate, with upfront prices, and to be paid in 72h if they leverage our platform to its full potential.</p>
                                 <div class="text-center">
-                                    <button
-                                        class="btn font-weight-bold btn-primary rounded-0 w-50"
-                                    >Ship with Everoad</button>
+                                    <router-link to="/signup">
+                                        <button
+                                            class="btn font-weight-bold btn-primary rounded-0 w-50"
+                                        >Ship with Everoad</button>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -108,10 +116,14 @@ export default {
 <style scoped>
 .my-bg {
     background: url(../assets/bg-home.jpg) no-repeat center center;
-    height: 100vh;
+    height: 80vh;
     background-size: cover;
 }
-
+.my-bg-transparent-dark {
+    background: rgba(46, 59, 76, 0.6);
+    height: 80vh;
+    background-size: cover;
+}
 .title-content {
     color: #fff;
     font-weight: bold;
